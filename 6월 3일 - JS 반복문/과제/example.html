@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>0604</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        #top {
+            margin-bottom: 10px;
+        }
+
+        #modal {
+            width: 400px;
+            border-radius: 10px;
+            background: #4e4e4e;
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #grid {
+            max-width: 396px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+            column-gap: 20px;
+            row-gap: 20px;
+        }
+
+        .unselected {
+            width: 84px;
+            height: 32px;
+            border-radius: 20px;
+            background-color: #6C6C6C;
+            cursor: pointer;
+            color: white;
+            font-weight: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .selected {
+            background-color: #2CFF2C;
+            color: black;
+            font-weight: 500;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="top">
+            관심 키워드를 선택하세요 <button id="toggle">열기</button>
+        </div>
+
+        <div id="modal" class="hidden">
+            <div id="grid">
+            </div>
+        </div>
+
+        <div id="result">
+            관심사를 선택해보세요.
+        </div>
+    </div>
+
+    <script>
+        /*  초기화 관련  */
+
+        var array = ['야구', '사진촬영', '독서', '방탈출', '일기쓰기', '쿠키런', '연극관람', '개발', '춤', '암벽등반', '요트', '드라마']
+        var selectedArray = [];
+
+        var grid = document.getElementById('grid');
+        for (var i = 0; i < array.length; i++) {
+            var unselected = document.createElement('div');
+            unselected.classList.add('unselected');
+            unselected.id = i;
+            unselected.addEventListener('click', clickedFunction);
+            unselected.innerText = array[i];
+            grid.appendChild(unselected);
+        }
+
+
+        /*  toggle 버튼 관련  */
+        var toggle = document.getElementById('toggle');
+        var modal = document.getElementById('modal');
+        const CLICKED_CLASS = "hidden"
+
+        toggle.addEventListener('click', function (event) {
+            const hasClass = modal.classList.contains(CLICKED_CLASS);
+            if (!hasClass) {
+                modal.classList.add(CLICKED_CLASS);
+                toggle.innerText = "열기";
+            } else {
+                modal.classList.remove(CLICKED_CLASS);
+                toggle.innerText = "닫기";
+            }
+        });
+
+
+        /*  버튼 클릭 이벤트 관련  */
+        function clickedFunction(e) {
+            var btn = document.getElementById(e.target.id);
+            if (selectedArray.includes(e.target.innerText)) {
+                var index = selectedArray.indexOf(e.target.innerText);
+                selectedArray.splice(index, 1);
+                btn.classList.remove('selected');
+            } else {
+                selectedArray.push(e.target.innerText);
+                btn.classList.add('selected');
+            }
+
+            var div = document.getElementById('result');
+            if (selectedArray.length == 0) {
+                div.innerText = '관심사를 선택해보세요.';
+            } else {
+                div.innerText = selectedArray + '에 관심 있군요!';
+            }
+        }
+    </script>
+</body>
+
+</html>

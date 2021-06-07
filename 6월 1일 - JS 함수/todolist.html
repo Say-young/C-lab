@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>0601</title>
+</head>
+
+<body>
+    <div>
+        <label>to do list 입력</label>
+        <input type='text' placeholder="할 일을 입력하세요." id='addValue' />
+        <input type='button' value='추가' onclick='addList()' />
+        <input type='button' value='삭제' onclick='removeList()' />
+    </div>
+
+    <div>
+        <ol id='todo_content'>
+        </ol>
+    </div>
+
+    <script>
+
+        array = [];
+
+        //추가
+        function addList() {
+            //입력창 값 가져오기
+            const content = document.getElementById('addValue').value;
+            //ol 가져오기
+            var ol = document.getElementById('todo_content');
+            //li 만들기
+            var li = document.createElement('li');
+            //li에 입력창에서 받은 값 추가
+            li.innerText = content;
+            //만든 li태그를 ol에 추가
+            ol.appendChild(li);
+            //삭제를 위해 value값을 className으로 지정
+            li.classList.add(content);
+            //입력값을 초기화하고 싶다면?
+            document.getElementById('addValue').value = "";
+        }
+
+        //삭제
+        function removeList() {
+            //입력창 값 가져오기
+            const content = document.getElementById('addValue').value;
+            //ol 가져오기
+            var ol = document.getElementById('todo_content');
+            //입력 value와 같은 class를 가진 li를 가져오기
+            const li = document.getElementsByClassName(content)[0];
+            //삭제~!
+            ol.removeChild(li);
+        }
+    </script>
+</body>
+
+</html>

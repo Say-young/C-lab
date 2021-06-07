@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>0602</title>
+    <style>
+        input {
+            width: 50px;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        C랩에 가면~
+    </h1>
+    <div>
+        <input type='text' id='addValue' />
+        <input type='button' value='추가' onclick='add()' />
+    </div>
+    <div id='div'></div>
+    <div id='total'>C랩에 지금 아무도 없네ㅠㅠ</div>
+    <hr />
+    <div>
+        <input type='text' id='findValue' style='width:15px' />번째 사람은?
+        <input type='button' value='찾기' onclick='find()' />
+    </div>
+    <div id='div2'></div>
+    <hr />
+    <div>
+        <input type='text' id='removeValue' style='width:15px' />번째를 지웁니다.
+        <input type='button' value='삭제' onclick='remove()' />
+    </div>
+    <div id='div3'></div>
+
+    <script>
+        array = [];
+
+        function add() {
+            var input = document.getElementById('addValue').value;
+            array.push(input);
+            var div = document.getElementById('div');
+            div.innerText = array + '도 있고~';
+            document.getElementById('addValue').value = "";
+
+            var total = document.getElementById('total');
+            total.innerText = 'C랩은 지금 총 ' + array.length + '명!'
+        }
+
+        function find() {
+            var input = document.getElementById('findValue').value;
+            var index = parseInt(input);
+            var div = document.getElementById('div2');
+            div.innerText = array[index - 1];
+            document.getElementById('findValue').value = "";
+        }
+
+        function remove() {
+            var input = document.getElementById('removeValue').value;
+            var index = parseInt(input);
+
+            var div = document.getElementById('div');
+            var div3 = document.getElementById('div3');
+            div3.innerText = array[index - 1] + ' 안녕~ 흑흑';
+
+            array.splice(index - 1, 1);
+            var total = document.getElementById('total');
+
+            if (array.length == 0) {
+                div.innerText = array;
+                total.innerText = 'C랩에 지금 아무도 없네ㅠㅠ'
+            } else {
+                div.innerText = array + '도 있고~';
+                total.innerText = 'C랩은 지금 총 ' + array.length + '명!'
+            }
+
+            document.getElementById('removeValue').value = "";
+        }
+    </script>
+</body>

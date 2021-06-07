@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <ul>
+        <li class="active">HTML</li>
+        <li id="active">CSS</li>
+        <li class="active">JavaScript</li>
+    </ul>
+
+    <!-- 다양한 방법으로 제어해보고, 각자의 방법을 공유해보기 -->
+
+    <script>
+        //모두 active 클래스로 변경했을 때
+        var lis = document.getElementsByClassName('active');
+        lis[0].style.color = 'red'
+        lis[1].style.color = 'green'
+        lis[2].style.color = 'purple'
+
+        var lis = document.getElementsByClassName('active')[0];
+        lis.style.color = 'red';
+        var li = document.getElementById('active');
+        li.style.color = 'green';
+        var lis = document.getElementsByClassName('active')[1];
+        lis.style.color = 'purple';
+
+        var lis = document.getElementsByClassName('active')[0];
+        var li = document.getElementById('active');
+        var lis2 = document.getElementsByClassName('active')[1];
+        lis.style.color = 'red';
+        li.style.color = 'green';
+        lis2.style.color = 'purple';
+    </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <ol>
+        <li>HTML</li>
+        <li class="active">CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    <script>
+        var lis = document.querySelectorAll('li');
+
+        for (var i in lis) {
+            lis[i].style.color = 'red';
+            console.log("for2", i);
+        }
+
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].style.color = 'red';
+            console.log("for1", i);
+        }
+
+        var li = document.querySelector('.active');
+        li.style.color = 'blue';
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+    <script>
+        //var ul = document.getElementsByTagName('ul')[0];
+
+        var lis = document.getElementsByTagName('li');
+        for (var i = 0; 6; i++) {
+            console.log("저는", i, "번째 i예요!");
+            lis[i].style.color = 'red';
+            console.log("lis[", i, "].style.color = 'red'");
+        }
+    </script>
+</body>
+
+</html> -->

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>자주 쓰는 CSS 속성</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+        div {
+            text-align: center;
+        }
+
+        span {
+            margin: 3px 0;
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+
+        span:hover {
+            background-color: bisque;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .flower1 {
+            font-size: 30px;
+            background: palevioletred no-repeat;
+            font-family: 'Black Han Sans', sans-serif;
+            border-radius: 300px 30px 0 100px;
+            text-align: right;
+        }
+
+        .flower2 {
+            font-size: 30px;
+            background: orange no-repeat;
+            font-family: 'Black Han Sans', sans-serif;
+            border-radius: 30px 300px 100px 0;
+            text-align: left;
+        }
+
+        .flower3 {
+            font-size: 30px;
+            background: aquamarine no-repeat;
+            font-family: 'Black Han Sans', sans-serif;
+            border-radius: 100px 0 30px 300px;
+            text-align: right;
+        }
+
+        .flower4 {
+            font-size: 30px;
+            background: slateblue no-repeat;
+            font-family: 'Black Han Sans', sans-serif;
+            border-radius: 0 100px 300px 30px;
+            text-align: left;
+        }
+
+        .rectangle {
+            width: 50px;
+            height: 200px;
+            font-size: 30px;
+            background: rgb(9, 36, 71);
+        }
+
+        .leaves1 {
+            background: darkcyan;
+            border-radius: 0 300px 0px 300px;
+        }
+
+        .leaves2 {
+            background: darkgray;
+            border-radius: 300px 0 300px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="flower1">
+            <p>꽃잎1</p>
+        </span>
+        <span class="flower2">
+            <p>꽃잎2</p>
+        </span>
+    </div>
+
+    <div>
+        <span class="flower3">
+            <p>꽃잎3</p>
+        </span>
+        <span class="flower4">
+            <p>꽃잎4</p>
+        </span>
+    </div>
+
+    <div class="what">
+        <span class="leaves1">
+        </span>
+        <span class="rectangle">
+        </span>
+        <span class="leaves2">
+        </span>
+    </div>
+</body>
+
+</html>

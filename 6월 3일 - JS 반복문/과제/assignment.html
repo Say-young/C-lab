@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>계산기</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-color: #5C5757;
+        }
+
+        td {
+            padding: 5px 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #363434;
+        }
+
+        input {
+            text-align: right;
+            border: none;
+            background-color: #363434;
+            color: white;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .orange {
+            background-color: #62929A;
+        }
+
+        .lightgray {
+            background-color: #EFECEC;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="display">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="result">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" onclick="reset()" class="orange">AC</td>
+            <td onclick="add('!')" class="orange">!</td>
+            <td onclick="add('/')" class="orange">/</td>
+        </tr>
+        <tr>
+            <td onclick="add(7)" class="lightgray">7</td>
+            <td onclick="add(8)" class="lightgray">8</td>
+            <td onclick="add(9)" class="lightgray">9</td>
+            <td onclick="add('*')" class="orange">*</td>
+        </tr>
+        <tr>
+            <td onclick="add(4)" class="lightgray">4</td>
+            <td onclick="add(5)" class="lightgray">5</td>
+            <td onclick="add(6)" class="lightgray">6</td>
+            <td onclick="add('-')" class="orange">-</td>
+        </tr>
+        <tr>
+            <td onclick="add(1)" class="lightgray">1</td>
+            <td onclick="add(2)" class="lightgray">2</td>
+            <td onclick="add(3)" class="lightgray">3</td>
+            <td onclick="add('+')" class="orange">+</td>
+        </tr>
+        <tr>
+            <td colspan="2" onclick="add(0)" class="lightgray">0</td>
+            <td onclick="add('.')" class="lightgray">.</td>
+            <td onclick="calculate()" class="orange">=</td>
+        </tr>
+    </table>
+    <script>
+        function addNum(char) {
+            var num = document.getElementById('display').value;
+        }
+        function calculate() {
+
+        }
+        function reset() {
+            document.getElementById('display').value = "";
+            document.getElementById('result').value = "";
+        }
+    </script>
+</body>
+
+</html>

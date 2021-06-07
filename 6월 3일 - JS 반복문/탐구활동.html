@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>0602</title>
+    <style>
+        input {
+            width: 50px;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Clab에 가면~
+    </h1>
+    <div>
+        <input type='text' id='addValue' />
+        <input type='button' value='추가' onclick='add()' />
+    </div>
+    <div id='div'></div>
+    <div id='total'>지금 아무도 없네ㅠㅠ</div>
+
+    <script>
+        array = [];
+
+        function add() {
+            var input = document.getElementById('addValue').value;
+            array.push(input);
+            var div = document.getElementById('div');
+
+            var text = '';
+            for (var i = 0; i < array.length; i++) {
+                text += array[i] + '도 있고~ ';
+            }
+            div.innerText = text;
+            document.getElementById('addValue').value = "";
+
+            var total = document.getElementById('total');
+            total.innerText = '지금 ' + array.length + '명 있어요!'
+        }
+    </script>
+</body>

@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <style>
+        #menu {
+            position: fixed;
+            top: 30px;
+            left: 8px;
+            background-color: #efefef;
+            width: 30%;
+            min-width: 200px;
+            max-width: 400px;
+        }
+
+        #menu>ul {
+            padding: 0;
+        }
+
+        #menu>ul>li {
+            list-style: none;
+            padding: 8px;
+        }
+
+        #menu>ul>li:hover {
+            background-color: #fefefe;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="toggle()">메뉴</button>
+    <div id="menu">
+        <ul>
+            <li>홈</li>
+            <li>프로젝트 소개</li>
+            <li>팀 소개</li>
+            <li>미디어</li>
+        </ul>
+    </div>
+
+    <script>
+        const CLICKED_CLASS = "hidden"
+
+        /*  contains 사용 */
+        function toggle() {
+            const hasClass = menu.classList.contains(CLICKED_CLASS);
+            if (!hasClass) {
+                menu.classList.add(CLICKED_CLASS);
+            } else {
+                menu.classList.remove(CLICKED_CLASS);
+            }
+        }
+
+        /*  toggle 사용  */
+        function toggle() {
+            menu.classList.toggle(CLICKED_CLASS);
+        }
+
+        /*  별도 변수 사용  */
+        // var i = 0;
+        // function toggle() {
+        //     var toggle = document.getElementById('menu');
+        //     if (i == 0) {
+        //         toggle.style.display = 'none';
+        //         i = 1;
+        //     } else {
+        //         toggle.style.display = 'flex';
+        //         i = 0;
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

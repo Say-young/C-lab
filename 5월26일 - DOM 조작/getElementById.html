@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>getElementById 실습</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function sayHello() {
+            var textBox = document.getElementById('inputName');
+            alert(textBox.value + "님 반갑습니다!");
+        }
+    </script>
+
+    <input type="text" width=200 id="inputName">
+    <input type="button" value="입력" onclick="sayHello()">
+</body>
+
+</html>
