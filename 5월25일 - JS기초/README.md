@@ -5,7 +5,7 @@
   * https://youtu.be/f_CM1FpmNmI (JS 연결 / alert, confirm, prompt)
   * https://youtu.be/PmRL8SxqmLw (DOM 개념 간단히)
 * 학습 목표
-  * 자바스크립트의 쓰임에 대해 이해하고 웹페이지에 적용할 수 있ㄴ다
+  * 자바스크립트의 쓰임에 대해 이해하고 웹페이지에 적용할 수 있다
   * DOM 에 대해서 이해하고 설명할 수 있습니다
   * JS를 통해 DOM 이 조작되는 원리를 이해하고 간단한 기능을 구현할 수 있습니다
 
