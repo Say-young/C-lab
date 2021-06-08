@@ -1,4 +1,4 @@
-## 16th Class - JS 문법 기초(반복문)
+## 16th Class - CSS 심화(media query)
 
 * 학습 목표
   * 미디어쿼리를 사용해 반응형 웹을 구현할 수 있습니다

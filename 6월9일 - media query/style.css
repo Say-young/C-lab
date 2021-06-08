@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #f0f4f5;
+}
+
+/* Nav container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #1f1f1f;
+}
+
+/* Logo with text */
+.navbar__logo {
+  font-size: 24px;
+  color: #f0f4f5;
+}
+
+.navbar__logo i {
+  color: #4AFFE0;
+}
+
+/* Menu */
+.navbar__menu {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+.navbar__menu li {
+  padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+  background-color: #4AFFE0;
+  border-radius: 4px;
+}
+
+.navbar__menu li:hover > a {
+    color:#1f1f1f;
+}
+
+.navbar__icons {
+  list-style: none;
+  color: #f0f4f5;
+  display: flex;
+  padding-left: 0;
+  cursor:pointer;
+}
+
+.navbar__icons li:hover {
+    color:#4AFFE0;
+}
+
+/* Icons */
+.navbar__icons li {
+  padding: 8px 12px;
+}
+
+/* Toggle button */
+.navbar__toggleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: #4AFFE0;
+}
+
+#grid-container{
+  max-width:100vw;
+  display: grid;
+  margin : 50px;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.image{
+  width:100%;
+  padding-top:70%;
+  position:relative;
+  background-color:#4f4f4f;
+}
+
+.image:hover{
+  background-color:#1f1f1f;
+  cursor:pointer;
+}
+
+.innerText{
+  display:none;
+  color:white;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+.image:hover .innerText{
+  display:flex;
+}
+
+.footer{
+  display:none;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:50px;
+  background-color: #1f1f1f;
+  justify-content: center;
+}
+
+.footer__icons{
+  list-style: none;
+  color: #f0f4f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+}
+
+.footer__icons i{
+  padding: 0 40px;
+}
+
+.footer__icons i:hover {
+  color:#4AFFE0;
+}
+
+
+/* For small screen */
+@media screen and (max-width: 768px) {
+  /* Nav container */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  /* Menu */
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar__menu a {
+    /*Fill in an entire line so that user can click on any space*/
+    display: block;
+  }
+
+  /* Icons */
+  .navbar__icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Toggle button */
+  .navbar__toggleBtn {
+    display: block;
+  }
+
+  /* When toggle button is clicked - active state */
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
+}
+
+@media (max-width:375px){
+  .footer{
+    display:flex;
+  }
+
+  #grid-container{
+    margin-bottom:100px;
+  }
+}
