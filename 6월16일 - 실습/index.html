@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>0616</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            scroll-snap-type: y mandatory;
+        }
+
+        .container>div {
+            scroll-snap-align: start;
+            flex: none;
+            height: 100%;
+        }
+
+        /* coloration */
+        .container>div:nth-child(even) {
+            background-color: #87EA87;
+        }
+
+        .container>div:nth-child(odd) {
+            background-color: #87CCEA;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+
+</html>
