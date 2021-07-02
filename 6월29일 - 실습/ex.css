@@ -1,0 +1,49 @@
+/* 원하는 방향/시간으로 hover시 실선 애니메이션 넣기 */
+
+.button_wrapper{
+    width:10rem;
+    height:10rem;
+    background-color:white;
+    margin-top:17rem;
+    position:relative;
+    
+}
+
+.film .film_button {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 88vh;
+    left: 41.6vw;
+    transform: translateY(-50%);
+    width: 270px;
+    cursor: pointer;
+}
+
+.film .film_button .film_buttonEffect {
+    stroke-dasharray: 26 288;
+    stroke-dashoffset: 35;
+    stroke-width: 5px;
+    fill: transparent;
+    stroke: rgb(87, 87, 87);
+    border-bottom: 5px solid black;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray .5s;
+}
+
+.film .film_button .film_buttonText {
+    font-size: 1em;
+    font-weight: 100;
+    letter-spacing: 0.07em;
+    color: #fff;
+    top: 43%;
+    left: 52.5%;
+    width: 240px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.film .film_button:hover .film_buttonEffect {
+    stroke: rgb(155, 155, 155);
+    stroke-width: 2px;
+    stroke-dashoffset: 35;
+    stroke-dasharray: 314 0;
+}
